@@ -69,7 +69,15 @@ while opcion != 0:
         case 5:
             print("Modficar palabra en inglés")
             palabra_ingles_am = input("¿Qué palabra deseas modificar?: ").lower().strip()
-            #if (palabra_ingles_am in glosario):
+            if (palabra_ingles_am in glosario):
+                palabra_nueva = input("Ingresa la correccion: ").lower().strip()
+                traduccion = glosario.pop(palabra_ingles_am)
+                glosario[palabra_nueva]= traduccion
+                with open ("glosario.json","w") as am:
+                    json.dump(glosario,am)
+                    print("Palabra modificada con exito")
+            else:
+                print("Palabra no encontrada, por favor intenta de nuevo")
 
         case 6:
             print("Eliminar una palabra ")
