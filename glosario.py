@@ -14,9 +14,12 @@ while opcion != 0:
     print("5.- Modificar palabra en inglés")
     print("6.- Eliminar una palabra")
     print("0.-Salir\n")
-
-    opcion = int(input(""))
-    print("Elegiste la opción: ",opcion)
+    try:
+        opcion = int(input(""))
+        print("Elegiste la opción: ",opcion)
+    except ValueError:
+        print("Por favor ingresa una opcion valida\n")
+        continue
 
     match opcion:
 
